@@ -59,6 +59,8 @@ class  Student
         Process p = new Process();
         p.update_grade();
         p.update();
+        
+        //use in Lambda method
         l.log(Level.INFO, p::display);
     }
 }
