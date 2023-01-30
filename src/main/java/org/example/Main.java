@@ -7,9 +7,9 @@ class Process
 {
     Logger l = Logger.getLogger("MY Logger");
     Scanner S = new Scanner(System.in);
-    String student_name;
+    String studentname;
     int total;
-    String grade_level;
+    String gradelevel;
     int GPA = 0 ;
     Process()
     {
