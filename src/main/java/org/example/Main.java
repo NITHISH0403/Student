@@ -14,40 +14,40 @@ class Process
     Process()
     {
         l.info("Enter the Student name :");
-        student_name = S.nextLine();
+        studentname = S.nextLine();
 
         l.info("Enter the total :");
         total = S.nextInt();
     }
-    void update_grade(){
+    void updategrade(){
         if(total >= 450)
-            grade_level = "A";
+            gradelevel = "A";
         else if(total >= 350)
-            grade_level = "B";
+            gradelevel = "B";
         else if(total >= 300)
-            grade_level = "C";
+            gradelevel = "C";
         else if(total >= 250)
-            grade_level = "D";
+            gradelevel = "D";
         else
-            grade_level = "E";
+            gradelevel = "E";
     }
     void update()
     {
-        if("A".equalsIgnoreCase(grade_level))
+        if("A".equalsIgnoreCase(gradelevel))
             GPA = 5;
-        else if("B".equalsIgnoreCase(grade_level))
+        else if("B".equalsIgnoreCase(gradelevel))
             GPA = 4;
-        else if("C".equalsIgnoreCase(grade_level))
+        else if("C".equalsIgnoreCase(gradelevel))
             GPA = 3;
-        else if("D".equalsIgnoreCase(grade_level))
+        else if("D".equalsIgnoreCase(gradelevel))
             GPA = 2;
         else
             GPA = 1;
     }
     String display()
     {
-        l.log(Level.INFO, () -> student_name + " " + "has a" + " " + grade_level + " " + "Grade");
-        return student_name + " " + "has a" + " " + GPA + " "+ "GPA.";
+        l.log(Level.INFO, () -> studentname + " " + "has a" + " " + gradelevel + " " + "Grade");
+        return studentname + " " + "has a" + " " + GPA + " "+ "GPA.";
     }
 }
 
@@ -57,7 +57,7 @@ class  Student
     {
         Logger l = Logger.getLogger("My Logger");
         Process p = new Process();
-        p.update_grade();
+        p.updategrade();
         p.update();
         
         //use in Lambda method
