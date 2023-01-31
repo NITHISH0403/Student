@@ -6,48 +6,48 @@ import java.util.logging.*;
 class Process
 {
     Logger l = Logger.getLogger("MY Logger");
-    Scanner S = new Scanner(System.in);
-    String student_name;
+    Scanner s = new Scanner(System.in);
+    String studentname;
     int total;
-    String grade_level;
-    int GPA = 0 ;
+    String gradelevel;
+    int gpa = 0 ;
     Process()
     {
         l.info("Enter the Student name :");
-        student_name = S.nextLine();
+        studentname = s.nextLine();
 
         l.info("Enter the total :");
-        total = S.nextInt();
+        total = s.nextInt();
     }
-    void update_grade(){
+    void updategrade(){
         if(total >= 450)
-            grade_level = "A";
+            gradelevel = "A";
         else if(total >= 350)
-            grade_level = "B";
+            gradelevel = "B";
         else if(total >= 300)
-            grade_level = "C";
+            gradelevel = "C";
         else if(total >= 250)
-            grade_level = "D";
+            gradelevel = "D";
         else
-            grade_level = "E";
+            gradelevel = "E";
     }
     void update()
     {
-        if("A".equalsIgnoreCase(grade_level))
-            GPA = 5;
-        else if("B".equalsIgnoreCase(grade_level))
-            GPA = 4;
-        else if("C".equalsIgnoreCase(grade_level))
-            GPA = 3;
-        else if("D".equalsIgnoreCase(grade_level))
-            GPA = 2;
+        if("A".equalsIgnoreCase(gradelevel))
+            gpa = 5;
+        else if("B".equalsIgnoreCase(gradelevel))
+            gpa = 4;
+        else if("C".equalsIgnoreCase(gradelevel))
+            gpa = 3;
+        else if("D".equalsIgnoreCase(gradelevel))
+            gpa = 2;
         else
-            GPA = 1;
+            gpa = 1;
     }
     String display()
     {
-        l.log(Level.INFO, () -> student_name + " " + "has a" + " " + grade_level + " " + "Grade");
-        return student_name + " " + "has a" + " " + GPA + " "+ "GPA.";
+        l.log(Level.INFO, () -> studentname + " " + "has a" + " " + gradelevel + " " + "Grade");
+        return studentname + " " + "has a" + " " + gpa + " "+ "GPA.";
     }
 }
 
@@ -57,8 +57,10 @@ class  Student
     {
         Logger l = Logger.getLogger("My Logger");
         Process p = new Process();
-        p.update_grade();
+        p.updategrade();
         p.update();
+        
+        //use in Lambda method
         l.log(Level.INFO, p::display);
     }
 }
