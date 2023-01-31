@@ -6,18 +6,18 @@ import java.util.logging.*;
 class Process
 {
     Logger l = Logger.getLogger("MY Logger");
-    Scanner S = new Scanner(System.in);
+    Scanner s = new Scanner(System.in);
     String studentname;
     int total;
     String gradelevel;
-    int GPA = 0 ;
+    int gpa = 0 ;
     Process()
     {
         l.info("Enter the Student name :");
-        studentname = S.nextLine();
+        studentname = s.nextLine();
 
         l.info("Enter the total :");
-        total = S.nextInt();
+        total = s.nextInt();
     }
     void updategrade(){
         if(total >= 450)
@@ -34,20 +34,20 @@ class Process
     void update()
     {
         if("A".equalsIgnoreCase(gradelevel))
-            GPA = 5;
+            gpa = 5;
         else if("B".equalsIgnoreCase(gradelevel))
-            GPA = 4;
+            gpa = 4;
         else if("C".equalsIgnoreCase(gradelevel))
-            GPA = 3;
+            gpa = 3;
         else if("D".equalsIgnoreCase(gradelevel))
-            GPA = 2;
+            gpa = 2;
         else
-            GPA = 1;
+            gpa = 1;
     }
     String display()
     {
         l.log(Level.INFO, () -> studentname + " " + "has a" + " " + gradelevel + " " + "Grade");
-        return studentname + " " + "has a" + " " + GPA + " "+ "GPA.";
+        return studentname + " " + "has a" + " " + gpa + " "+ "GPA.";
     }
 }
 
